@@ -1,0 +1,18 @@
+# IDEs and editors
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle / Build
+.gradle/
+**/build/
+**/.gradle/
+local.properties
+
+# Python
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db

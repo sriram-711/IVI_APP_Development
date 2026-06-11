@@ -1,0 +1,51 @@
+package: "com.android.car.settings"
+container: "system"
+
+flag {
+    name: "ui_theme_toggle"
+    namespace: "car_sys_exp"
+    description: "Flag to show the new UI theme toggle within settings and quick controls"
+    bug: "260762437"
+}
+
+flag {
+    name: "required_infotainment_apps_settings_page"
+    namespace: "car_sys_exp"
+    description: "Flag to display certain settings pages with required and infotainment apps"
+    bug: "327489942"
+}
+
+flag {
+    name: "microphone_privacy_updates"
+    namespace: "car_sys_exp"
+    description: "Flag to display an updated privacy page for the microphone."
+    bug: "340636015"
+}
+
+flag {
+    name: "hotspot_ui_speed_update"
+    namespace: "car_sys_exp"
+    description: "Flag to update hotspot band page with dual band support"
+    bug: "193605871"
+}
+
+flag {
+    name: "update_date_and_time_page"
+    namespace: "car_sys_exp"
+    description: "Flag to display a single toggle for automatic local time in date/time page."
+    bug: "326140783"
+}
+
+flag {
+    name: "new_fragment_aspect_ratio_feature"
+    namespace: "car_sys_exp"
+    description: "Flag to display the preference and the fragment for the aspect ratio page."
+    bug: "375471891"
+}
+
+flag {
+    name: "new_fragment_for_intents"
+    namespace: "car_sys_exp"
+    description: "Flag to display several new fragments added to host necessary intents."
+    bug: "376744576"
+}
