@@ -131,6 +131,11 @@
     <attr name="suggestionsPrimaryColor" format="color"/>
     <attr name="suggestionsSecondaryColor" format="color"/>
 
+    <attr name="quickSettingsEnabledColor" format="color"/>
+    <attr name="quickSettingsDisabledColor" format="color"/>
+    <attr name="quickSettingsIconEnabledColor" format="color"/>
+    <attr name="quickSettingsIconDisabledColor" format="color"/>
+
 
     <declare-styleable name="ColoredTwoActionSwitchPreference">
         <attr name="warningTextColor" format="color"/>

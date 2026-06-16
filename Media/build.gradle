@@ -19,7 +19,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion gradle.ext.aaosLatestSDK
     defaultConfig {
-        applicationId "com.android.car.media"
+        applicationId "com.android.car.media.dev"
         minSdkVersion 30 // Media requires apis that became public in R.
         targetSdkVersion gradle.ext.aaosTargetSDK
     }

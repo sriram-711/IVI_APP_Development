@@ -16,3 +16,5 @@ local.properties
 # OS files
 .DS_Store
 Thumbs.db
+**/temp_apks/
+**/*.tar.gz

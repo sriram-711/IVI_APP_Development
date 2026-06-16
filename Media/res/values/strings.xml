@@ -29,11 +29,12 @@
     <!-- Text of the button displayed at the bottom of a media browse section to provide access to additional items. [CHAR LIMIT=100] -->
     <string name="media_browse_more">More…</string>
     <!-- Media template title -->
-    <string name="media_app_title">Media</string>
+    <string name="media_app_title">Sriram</string>
     <!-- Search input hint text. [CHAR LIMIT=20] -->
     <string name="search_hint">Search songs, artists, and more...</string>
     <!-- Title to display when in playback view. [CHAR LIMIT=50] -->
     <string name="fragment_playback_title">Now Playing</string>
+
 
 
     <!-- Title string for the service used to bind to the current media source -->

@@ -87,6 +87,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="bool" name="config_always_ignore_ux_restrictions"/>
       <item type="bool" name="config_automatic_brightness_available"/>
       <item type="bool" name="config_enable_home_settings_icon"/>
+      <item type="bool" name="config_enable_quick_settings_icon"/>
       <item type="bool" name="config_global_force_single_pane"/>
       <item type="bool" name="config_show_camera_required_apps_toggle"/>
       <item type="bool" name="config_show_location_required_apps_toggle"/>
@@ -118,6 +119,9 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="color" name="ic_launcher_settings_background"/>
       <item type="color" name="ic_toolbar_settings_background"/>
       <item type="color" name="icon_color_default"/>
+      <item type="color" name="car_background"/>
+      <item type="color" name="car_yellow_color"/>
+      <item type="color" name="settings_background"/>
       <item type="color" name="qc_default_icon_color"/>
       <item type="color" name="text_color_accent_with_disable"/>
       <item type="color" name="theme_toggle_button_background"/>

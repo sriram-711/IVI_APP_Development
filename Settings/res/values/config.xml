@@ -26,6 +26,8 @@
         @string/pk_bluetooth_settings_entry</string>
     <!-- Whether to show the launcher icon for settings home or not. -->
     <bool name="config_enable_home_settings_icon">true</bool>
+    <!-- Whether to show the quick settings icon in launcher or not. -->
+    <bool name="config_enable_quick_settings_icon">true</bool>
     <!-- Whether system_update_settings should be shown or not. -->
     <bool name="config_show_system_update_settings">true</bool>
     <!-- Whether Wi-Fi Mac address should be shown or not. -->

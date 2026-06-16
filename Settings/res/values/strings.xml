@@ -17,9 +17,9 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Application name -->
-    <string name="settings_label">Settings</string>
+    <string name="settings_label">Sriram Settings</string>
     <string name="more_settings_label">More</string>
-    <string name="display_settings">Display</string>
+    <string name="display_settings">Sriram Display</string>
     <!-- Sound & display settings screen, setting option name to change brightness level -->
     <string name="brightness">Brightness level</string>
     <!-- Sound & display settings screen, setting option name to enable adaptive brightness [CHAR LIMIT=30] -->
@@ -38,7 +38,7 @@
     <string name="empty_placeholder" translatable="false">&#160;</string>
 
     <!-- Network and internet settings [CHAR LIMIT=40] -->
-    <string name="network_and_internet">Network &amp; internet</string>
+    <string name="network_and_internet">Sriram Network</string>
     <!-- Mobile network settings [CHAR LIMIT=30] -->
     <string name="mobile_network_settings">Mobile network</string>
     <!-- Summary of the 'Mobile network' item on the Network & internet page when there is more than
@@ -2291,4 +2291,16 @@
     <!-- Toast message to let the user know that there is no supported function for this intent. [CHAR LIMIT=80]
     TODO(b/371591484): to update this string when UX finalizes it.-->
     <string name="unsupported_intents_toast_text">Your vehicle does not support this feature</string>
+
+    <string name="driver_assistance_settings_title">Driver Assistance</string>
+    <string name="pk_location_driver_assistance_preference_group">location_driver_assistance_group</string>
+    <string name="location_driver_assistance_action_text">Settings</string>
+    <string name="pk_location_driver_assistance_state_switch">location_driver_assistance_switch</string>
+    <string name="location_driver_assistance_toggle_off_summary">Disabled</string>
+    <string name="location_driver_assistance_toggle_off_title">Turn off</string>
+    <string name="pk_location_driver_assistance_privacy_policy_header">privacy_policy_header</string>
+    <string name="location_driver_assistance_privacy_policy_header_content">Privacy Policy</string>
+    <string name="pk_location_footer">location_footer</string>
+    <string name="adas_settings_footer">Driver assistance features require location.</string>
+
 </resources>
