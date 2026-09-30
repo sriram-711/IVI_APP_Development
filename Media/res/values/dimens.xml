@@ -48,7 +48,7 @@
     <!-- Paddings of playback seekbar -->
     <dimen name="playback_seekbar_padding_x">0dp</dimen>
     <!-- x-axis margin of playback seekbar -->
-    <dimen name="playback_seekbar_margin_x">@dimen/car_ui_margin</dimen>
+    <dimen name="playback_seekbar_margin_x">32dp</dimen>
     <!-- Image size used to generate the background -->
     <dimen name="playback_background_raw_image_size">300px</dimen>
 
@@ -147,7 +147,7 @@
     <dimen name="queue_fading_edge_length">81dp</dimen>
     <dimen name="fragment_playback_queue_overlap_top">@dimen/car_ui_padding_4</dimen>
     <dimen name="fragment_playback_queue_overlap_bottom">@dimen/car_ui_padding_4</dimen>
-    <dimen name="fragment_metadata_margin_x">@dimen/car_ui_margin</dimen>
+    <dimen name="fragment_metadata_margin_x">32dp</dimen>
     <dimen name="playback_title_margin_end">@dimen/car_ui_padding_3</dimen>
 
     <!-- PlaybackFragment.java -->

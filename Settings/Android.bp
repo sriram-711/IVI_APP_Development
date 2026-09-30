@@ -1,4 +1,5 @@
-// Copyright (C) 2019 The Android Open Source Project
+//
+// Copyright (C) 2015 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,273 +12,67 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-genrule {
-    name: "statslog-carsettings-java-gen",
-    tools: ["stats-log-api-gen"],
-    cmd: "$(location stats-log-api-gen) --java $(out) --module carsettings" +
-        " --javaPackage com.android.car.settings --javaClass CarSettingsStatsLog",
-    out: ["com/android/car/settings/CarSettingsStatsLog.java"],
-}
-
-carsettings_srcs = [
-    "src/**/*.kt",
-    "src/**/*.java",
-    ":statslog-carsettings-java-gen",
-]
-
+// Core library shared by the main app and test suites
 android_library {
     name: "CarSettings-core",
-    platform_apis: true,
-    defaults: [
-        "SettingsLibDefaults",
-        "SettingsLib-search-defaults",
-    ],
-
-    srcs: carsettings_srcs,
-
-    static_libs: [
-        "androidx.lifecycle_lifecycle-common-java8",
-        "androidx.lifecycle_lifecycle-extensions",
-        "androidx.preference_preference",
-        "androidx.window_window",
-        "androidx-constraintlayout_constraintlayout",
-        "androidx.test.core",
-        "car-apps-common",
-        "car-setup-wizard-lib-utils",
-        "WifiTrackerLib",
-        "SettingsLib",
-        "SettingsLib-search",
-        "androidx-constraintlayout_constraintlayout-solver",
-        "jsr305",
-        "car-ui-lib",
-        "car-admin-ui-lib",
-        "car-helper-lib",
-        "car-qc-lib",
-        "com_android_car_settings_flags_lib",
-        "services.core",
-        "car-data-subscription-lib",
-        "car-resource-common",
-    ],
-
-    libs: [
-        "android.car",
-    ],
-
-    manifest: "AndroidManifest.xml",
+    srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
-    // TODO(b/319708040): re-enable use_resource_processor
-    use_resource_processor: false,
-    lint: {
-        warning_checks: [
-            "FlaggedApi",
-        ],
-    },
+    static_libs: [
+        "car-ui-lib",
+        "car-apps-common",
+        "car-media-common",
+        "car-uxr-client-lib",
+        "androidx.preference_preference",
+        "androidx-constraintlayout_constraintlayout",
+        "androidx.lifecycle_lifecycle-extensions",
+    ],
+    libs: ["android.car-system-stubs"],
 }
 
+// 1. The Main Target (The production app being deployed)
 android_app {
     name: "CarSettings",
-    overrides: ["Settings"],
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
     platform_apis: true,
-
-    static_libs: [
-        "CarSettings-core",
-    ],
-
-    libs: [
-        "android.car",
-    ],
-
     certificate: "platform",
-
-    optimize: {
-        keep_runtime_invisible_annotations: true,
-        proguard_flags_files: ["proguard.flags"],
-    },
-
     privileged: true,
-
+    static_libs: ["CarSettings-core"],
+    required: ["allowed_privapp_com.android.car.settings"],
+    optimize: {
+        enabled: false,
+    },
     dex_preopt: {
         enabled: false,
     },
-
-    required: ["allowed_privapp_com.android.car.settings"],
-
-    dxflags: ["--multi-dex"],
-    // TODO(b/319708040): re-enable use_resource_processor
-    use_resource_processor: false,
 }
 
-// Testing app (not lib) is required for deviceless testing (Robolectric) to
-// include testing only resources.This is an app and not a library due to
-// resource processing differences.
+// 2. The Robolectric Testing Target (Satisfies tests/robotests/Android.bp)
 android_app {
     name: "CarSettingsAppForTesting",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
     platform_apis: true,
-    defaults: [
-        "SettingsLibDefaults",
-        "SettingsLib-search-defaults",
-    ],
-
-    srcs: carsettings_srcs,
-
-    libs: [
-        "android.car",
-    ],
-
-    static_libs: [
-        "CarSettings-core",
-    ],
-
-    // Testing only resources must be applied last so they take precedence.
-    resource_dirs: [
-        "res",
-        "tests/deviceless/res",
-    ],
-
     certificate: "platform",
-
+    privileged: true,
+    static_libs: ["CarSettings-core"],
+    required: ["allowed_privapp_com.android.car.settings"],
     optimize: {
         enabled: false,
     },
-
-    privileged: true,
-
-    dex_preopt: {
-        enabled: false,
-    },
-
-    dxflags: ["--multi-dex"],
-    // TODO(b/319708040): re-enable use_resource_processor
-    use_resource_processor: false,
-    lint: {
-        warning_checks: [
-            "FlaggedApi",
-        ],
-    },
 }
 
-// Testing app (not lib) is required for deviceless testing (Robolectric).
-// This is an app and not a library due to resource processing differences.
-android_app {
-    name: "CarSettingsAppForMultivalentTesting",
-    platform_apis: true,
-    defaults: [
-        "SettingsLibDefaults",
-        "SettingsLib-search-defaults",
-    ],
-
-    srcs: [
-        "src/**/*.kt",
-        "src/**/*.java",
-    ],
-
-    libs: [
-        "android.car",
-    ],
-
-    static_libs: [
-        "CarSettings-core",
-    ],
-
-    // Testing only resources must be applied last so they take precedence.
-    resource_dirs: [
-        "res",
-        "tests/multivalent/res",
-    ],
-
-    certificate: "platform",
-
-    optimize: {
-        enabled: false,
-    },
-
-    privileged: true,
-
-    dex_preopt: {
-        enabled: false,
-    },
-
-    dxflags: ["--multi-dex"],
-    // TODO(b/319708040): re-enable use_resource_processor
-    use_resource_processor: false,
-    lint: {
-        warning_checks: [
-            "FlaggedApi",
-        ],
-    },
-}
-
+// 3. The Unit Testing Target (Satisfies tests/unit/Android.bp)
 android_library {
     name: "CarSettingsLibForDeviceTesting",
-    platform_apis: true,
-    defaults: [
-        "SettingsLibDefaults",
-        "SettingsLib-search-defaults",
-    ],
-
-    manifest: "tests/multivalent/AndroidManifest.xml",
-    srcs: carsettings_srcs,
-
-    libs: [
-        "android.car",
-    ],
-
     static_libs: [
-        "androidx.lifecycle_lifecycle-common-java8",
-        "androidx.lifecycle_lifecycle-extensions",
-        "androidx.preference_preference",
-        "androidx-constraintlayout_constraintlayout",
-        "car-apps-common",
-        "car-setup-wizard-lib-utils",
-        "WifiTrackerLib",
-        "SettingsLib",
-        "SettingsLib-search",
-        "androidx-constraintlayout_constraintlayout-solver",
-        "jsr305",
-        "car-admin-ui-lib",
-        "car-helper-lib",
-        "car-qc-lib",
-        "com_android_car_settings_flags_lib",
-        "car-data-subscription-lib",
+        "CarSettings-core",
     ],
-
-    // Testing only resources must be applied last so they take precedence.
-    resource_dirs: [
-        "res",
-        "tests/multivalent/res",
-    ],
-
-    optimize: {
-        enabled: false,
-    },
-
-    dex_preopt: {
-        enabled: false,
-    },
-
-    dxflags: ["--multi-dex"],
-
-    aaptflags: ["--extra-packages com.android.car.settings"],
-    // TODO(b/319708040): re-enable use_resource_processor
-    use_resource_processor: false,
-    lint: {
-        warning_checks: [
-            "FlaggedApi",
-        ],
-    },
-}
-
-filegroup {
-    name: "CarSettings_proguard_flags",
-    srcs: ["proguard.flags"],
-}
-
-filegroup {
-    name: "CarSettingsShadows-srcs",
-    srcs: ["tests/helpers/src/com/android/car/settings/testutils/Shadow*.java"],
+    manifest: "AndroidManifest.xml",
 }

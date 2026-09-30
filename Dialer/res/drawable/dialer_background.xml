@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. Dark Base Color -->
+    <item>
+        <shape>
+            <solid android:color="#090B15"/>
+        </shape>
+    </item>
+
+    <!-- 2. The Segula Image (Centered & Scaled) -->
+    <item>
+        <bitmap
+            android:src="@drawable/segula"
+            android:gravity="center"
+            android:alpha="0.8"/>
+    </item>
+
+    <!-- 3. Cyan Glow -->
+    <item android:left="-250dp" android:top="-250dp">
+        <shape android:shape="oval">
+            <size android:width="600dp" android:height="600dp"/>
+            <gradient
+                android:type="radial"
+                android:centerColor="#3300E5FF"
+                android:endColor="#0000E5FF"
+                android:gradientRadius="300"/>
+        </shape>
+    </item>
+
+    <!-- 4. Purple Glow -->
+    <item android:right="-250dp" android:bottom="-250dp" android:gravity="bottom|end">
+        <shape android:shape="oval">
+            <size android:width="600dp" android:height="600dp"/>
+            <gradient
+                android:type="radial"
+                android:centerColor="#228B5CF6"
+                android:endColor="#008B5CF6"
+                android:gradientRadius="350"/>
+        </shape>
+    </item>
+</layer-list>

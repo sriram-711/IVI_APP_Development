@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-
 <resources>
-    <color name="no_content_text_color">#FFFFFF</color>
 
-    <color name="album_art_background">#376D3B</color>
+    <!-- ============================= -->
+    <!-- Glassmorphism Color Palette -->
+    <!-- ============================= -->
 
-    <!-- Background behind transport controls while browsing -->
-    <color name="browse_playback_bg_color">#2A5C75</color>
+    <!-- Main Background -->
+    <color name="background_dark">#090B15</color>
+    <color name="background_secondary">#111827</color>
 
-    <!-- Progress bar background -->
-    <color name="progress_bar_background">#F5EE27</color>
+    <!-- Glass Panel -->
+    <color name="glass_color">#22FFFFFF</color>
+    <color name="glass_border">#44FFFFFF</color>
 
-    <!-- Progress bar highlight -->
-    <color name="progress_bar_highlight">@color/media_source_default_color</color>
+    <!-- Neon Accent -->
+    <color name="accent_blue">#00E5FF</color>
+    <color name="accent_purple">#8B5CF6</color>
 
-    <!-- Progress bar thumb -->
-    <color name="progress_bar_thumb_color">@color/media_source_default_color</color>
+    <!-- Text -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B8C5D6</color>
 
-    <!-- App bar icons -->
-    <color name="appbar_view_icon_tint">@color/primary_app_icon_color</color>
+    <!-- Existing References -->
+    <color name="no_content_text_color">@color/text_primary</color>
 
-    <!-- Settings icon tint -->
-    <color name="appbar_view_settings_tint">@color/uxr_button_image_color_selector</color>
+    <color name="album_art_background">#182032</color>
 
-    <!-- Search hint text -->
-    <color name="search_hint_text_color">#4DECEFF4</color>
+    <!-- Background behind playback controls -->
+    <color name="browse_playback_bg_color">@color/background_dark</color>
 
-    <!-- Queue playing icon -->
-    <color name="queue_playing_icon_color">@color/icon_tint</color>
+    <!-- Progress Bar -->
+    <color name="progress_bar_background">#25FFFFFF</color>
+    <color name="progress_bar_highlight">@color/accent_blue</color>
+    <color name="progress_bar_thumb_color">@color/accent_blue</color>
 
-    <!-- Search underline -->
-    <color name="search_bar_underline_color">#88C0D0</color>
-    
+    <!-- App Bar -->
+    <color name="appbar_view_icon_tint">@color/text_primary</color>
+    <color name="appbar_view_settings_tint">@color/accent_blue</color>
+
+    <!-- Search -->
+    <color name="search_hint_text_color">#88FFFFFF</color>
+    <color name="search_bar_underline_color">@color/accent_blue</color>
+
+    <!-- Queue -->
+    <color name="queue_playing_icon_color">@color/accent_blue</color>
 
 </resources>

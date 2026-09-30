@@ -16,12 +16,13 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="TextAppearance.NoContent" parent="android:TextAppearance.Medium">
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:textSize">@dimen/car_ui_body3_size</item>
         <item name="android:textColor">@color/no_content_text_color</item>
     </style>
 
     <style name="MetadataPlaybackTitleStyle" parent="TextAppearance.Display2">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lineSpacingExtra">@dimen/car_ui_padding_1</item>
@@ -29,26 +30,30 @@
     </style>
 
     <style name="MetadataPlaybackSubtitleStyle" parent="TextAppearance.Body1">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:textColor">@color/secondary_text_color</item>
         <item name="android:singleLine">true</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="MetadataContainerStyle">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginHorizontal">@dimen/fragment_metadata_margin_x</item>
     </style>
 
     <style name="BrowseSubheaderStyle" parent="TextAppearance.Body3">
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">@font/mama</item>
     </style>
     <style name="BrowseListTitleStyle" parent="TextAppearance.Body1"/>
     <style name="BrowseListSubtitleStyle" parent="TextAppearance.Body3">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:textColor">@color/secondary_text_color</item>
     </style>
     <style name="BrowseGridTitleStyle" parent="TextAppearance.Body2"/>
     <style name="BrowseGridSubtitleStyle" parent="TextAppearance.Body3">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:textColor">@color/secondary_text_color</item>
     </style>
 
@@ -60,12 +65,15 @@
     </style>
 
     <style name="QueueListItemTitlesContainerStyle">
+        <item name="android:fontFamily">@font/mama</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
     </style>
 
     <style name="QueueListItemTitleStyle" parent="TextAppearance.Body1">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:singleLine">true</item>
@@ -74,6 +82,7 @@
     </style>
 
     <style name="QueueListItemSubtitleStyle" parent="TextAppearance.Body3">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:singleLine">true</item>
@@ -83,10 +92,11 @@
     </style>
 
     <style name="QueueListItemTimeStyle" parent="TextAppearance.Body3">
+        <item name="android:fontFamily">@font/mama</item>
         <item name="android:singleLine">true</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="BrowseListItemRightArrowStyle">

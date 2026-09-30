@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="enterprise_privacy_number_ca_certs">
+        <item quantity="one">%d CA certificate</item>
+        <item quantity="other">%d CA certificates</item>
+    </plurals>
+    <plurals name="default_camera_app_title">
+        <item quantity="one">Camera</item>
+        <item quantity="other">Cameras</item>
+    </plurals>
+    <plurals name="default_email_app_title">
+        <item quantity="one">Email</item>
+        <item quantity="other">Emails</item>
+    </plurals>
+    <plurals name="default_phone_app_title">
+        <item quantity="one">Phone</item>
+        <item quantity="other">Phones</item>
+    </plurals>
+    <plurals name="enterprise_privacy_number_failed_password_wipe">
+        <item quantity="one">1 attempt</item>
+        <item quantity="other">%d attempts</item>
+    </plurals>
+    <plurals name="enterprise_privacy_number_packages">
+        <item quantity="one">1 app</item>
+        <item quantity="other">%d apps</item>
+    </plurals>
+    <plurals name="enterprise_privacy_number_packages_lower_bound">
+        <item quantity="one">At least 1 app</item>
+        <item quantity="other">At least %d apps</item>
+    </plurals>
+</resources>

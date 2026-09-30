@@ -31,23 +31,19 @@ import com.android.car.settings.common.PreferenceControllerTestUtil
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.ArgumentMatcher
-import org.mockito.kotlin.argThat
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.eq
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.spy
-import org.mockito.kotlin.whenever
+import org.mockito.ArgumentMatchers.argThat
+import org.mockito.ArgumentMatchers.eq
+import org.mockito.Mockito.doReturn
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.spy
 
 @RunWith(AndroidJUnit4::class)
 class AppAllServicesPreferenceControllerTest {
-    private val mockFragmentController = mock<FragmentController>()
-    private val mockPackageManager = mock<PackageManager>()
-    private val mockResolveInfo = mock<ResolveInfo>()
-    private val mockLocationManager = mock<LocationManager>()
-    private val context = spy(ApplicationProvider.getApplicationContext<Context>()) {
-        on { packageManager } doReturn mockPackageManager
-        on { getSystemService(LocationManager::class.java) } doReturn mockLocationManager
-    }
+    private val mockFragmentController = mock(FragmentController::class.java)
+    private val mockPackageManager = mock(PackageManager::class.java)
+    private val mockResolveInfo = mock(ResolveInfo::class.java)
+    private val mockLocationManager = mock(LocationManager::class.java)
+    private val context = spy(ApplicationProvider.getApplicationContext<Context>())
     private val carUxRestrictions = CarUxRestrictions.Builder(
         /* reqOpt = */ true,
         CarUxRestrictions.UX_RESTRICTIONS_BASELINE,
@@ -64,12 +60,12 @@ class AppAllServicesPreferenceControllerTest {
     fun getAvailabilityStatus_shouldReturnAvailable() {
         controller.setPackageName(primaryPackageName)
         val intent = getFeaturesIntent(primaryPackageName)
-        whenever(
-            mockPackageManager.resolveActivity(matchIntent(intent), /* flags = */ eq(0))
-        ) doReturn mockResolveInfo
-        whenever(
-            mockLocationManager.isProviderPackage(null, primaryPackageName, null)
-        ) doReturn true
+        doReturn(mockResolveInfo)
+            .`when`(mockPackageManager)
+            .resolveActivity(matchIntent(intent), eq(0))
+        doReturn(true)
+            .`when`(mockLocationManager)
+            .isProviderPackage(null, primaryPackageName, null)
 
         PreferenceControllerTestUtil.assertAvailability(controller.availabilityStatus, AVAILABLE)
     }
@@ -78,12 +74,12 @@ class AppAllServicesPreferenceControllerTest {
     fun getAvailabilityStatus_isNotLocationProvider_shouldReturnConditionallyUnavailable() {
         controller.setPackageName(primaryPackageName)
         val intent = getFeaturesIntent(primaryPackageName)
-        whenever(
-            mockPackageManager.resolveActivity(matchIntent(intent), /* flags = */ eq(0))
-        ) doReturn mockResolveInfo
-        whenever(
-            mockLocationManager.isProviderPackage(null, primaryPackageName, null)
-        ) doReturn false
+        doReturn(mockResolveInfo)
+            .`when`(mockPackageManager)
+            .resolveActivity(matchIntent(intent), eq(0))
+        doReturn(false)
+            .`when`(mockLocationManager)
+            .isProviderPackage(null, primaryPackageName, null)
 
         PreferenceControllerTestUtil.assertAvailability(
             controller.availabilityStatus,
@@ -96,12 +92,12 @@ class AppAllServicesPreferenceControllerTest {
         controller.setPackageName(primaryPackageName)
         val intent = getFeaturesIntent(secondaryPackageName)
         // Trying to match with a package that cannot handle the intent
-        whenever(
-            mockPackageManager.resolveActivity(matchIntent(intent), /* flags = */ eq(0))
-        ) doReturn mockResolveInfo
-        whenever(
-            mockLocationManager.isProviderPackage(null, primaryPackageName, null)
-        ) doReturn true
+        doReturn(mockResolveInfo)
+            .`when`(mockPackageManager)
+            .resolveActivity(matchIntent(intent), eq(0))
+        doReturn(true)
+            .`when`(mockLocationManager)
+            .isProviderPackage(null, primaryPackageName, null)
 
         PreferenceControllerTestUtil.assertAvailability(
             controller.availabilityStatus,
@@ -113,12 +109,12 @@ class AppAllServicesPreferenceControllerTest {
     fun getAvailabilityStatus_shouldReturnConditionallyUnavailable() {
         controller.setPackageName(primaryPackageName)
         val intent = getFeaturesIntent(secondaryPackageName)
-        whenever(
-            mockPackageManager.resolveActivity(matchIntent(intent), /* flags = */ eq(0))
-        ) doReturn mockResolveInfo
-        whenever(
-            mockLocationManager.isProviderPackage(null, primaryPackageName, null)
-        ) doReturn false
+        doReturn(mockResolveInfo)
+            .`when`(mockPackageManager)
+            .resolveActivity(matchIntent(intent), eq(0))
+        doReturn(false)
+            .`when`(mockLocationManager)
+            .isProviderPackage(null, primaryPackageName, null)
 
         PreferenceControllerTestUtil.assertAvailability(
             controller.availabilityStatus,

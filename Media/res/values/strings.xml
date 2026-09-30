@@ -33,7 +33,7 @@
     <!-- Search input hint text. [CHAR LIMIT=20] -->
     <string name="search_hint">Search songs, artists, and more...</string>
     <!-- Title to display when in playback view. [CHAR LIMIT=50] -->
-    <string name="fragment_playback_title">Now Playing</string>
+    <string name="fragment_playback_title">Now Playing Music</string>
 
 
 

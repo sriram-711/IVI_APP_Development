@@ -532,6 +532,11 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="xml" name="searchable"/>
       <item type="xml" name="settings_page"/>
       <item type="xml" name="uxr_config"/>
+      <item type="drawable" name="segula"/>
+      <item type="drawable" name="dialer_background"/>
+      <item type="font" name="brotheric_regular"/>
+      <item type="font" name="brotheric_ink_bleed"/>
+      <item type="color" name="dialer_gothic_gold"/>
     </policy>
   </overlayable>
 </resources>

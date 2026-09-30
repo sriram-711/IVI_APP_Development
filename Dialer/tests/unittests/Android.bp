@@ -8,7 +8,7 @@ package {
 android_test {
     name: "CarDialerUnitTests",
 
-    min_sdk_version: "29",
+    min_sdk_version: "31",
 
     target_sdk_version: "31",
 

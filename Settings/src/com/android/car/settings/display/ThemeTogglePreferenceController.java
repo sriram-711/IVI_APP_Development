@@ -180,13 +180,15 @@ public class ThemeTogglePreferenceController extends PreferenceController<MultiA
     }
 
     private Drawable getThemeModeIcon(int mode) {
-        return switch (mode) {
-            case FORCED_SENSOR_MODE -> getContext().getDrawable(
-                    R.drawable.ic_theme_toggle_auto_button);
-            case FORCED_DAY_MODE -> getContext().getDrawable(R.drawable.ic_theme_toggle_day_button);
-            case FORCED_NIGHT_MODE -> getContext().getDrawable(
-                    R.drawable.ic_theme_toggle_night_button);
-            default -> null;
-        };
+        switch (mode) {
+            case FORCED_SENSOR_MODE:
+                return getContext().getDrawable(R.drawable.ic_theme_toggle_auto_button);
+            case FORCED_DAY_MODE:
+                return getContext().getDrawable(R.drawable.ic_theme_toggle_day_button);
+            case FORCED_NIGHT_MODE:
+                return getContext().getDrawable(R.drawable.ic_theme_toggle_night_button);
+            default:
+                return null;
+        }
     }
 }

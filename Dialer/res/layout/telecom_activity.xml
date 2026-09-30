@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<FrameLayout
+<FrameLayout android:background="@drawable/dialer_background"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"

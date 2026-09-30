@@ -35,9 +35,8 @@ echo "==================================================="
 
 # 1. Trigger Remote SSH Build
 echo "[1/4] Compiling $APP_TARGET on remote server..."
-ssh ${REMOTE_USER}@${REMOTE_HOST} "cd ${REMOTE_DIR} && source build/envsetup.sh && lunch ${LUNCH_TARGET} && m ${APP_TARGET}"
+ssh ${REMOTE_USER}@${REMOTE_HOST} "cd '${REMOTE_DIR}' && bash -lc 'set -e; source build/envsetup.sh && lunch ${LUNCH_TARGET} && m ${APP_TARGET}'"
 if [ $? -ne 0 ]; then echo "❌ Build Failed"; exit 1; fi
-
 # 2. Download APK
 echo "[2/4] Downloading APK..."
 mkdir -p ./temp_apks

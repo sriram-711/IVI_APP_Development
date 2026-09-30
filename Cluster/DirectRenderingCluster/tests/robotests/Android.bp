@@ -4,7 +4,6 @@
 
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
-    default_team: "trendy_team_system_experience",
 }
 
 android_robolectric_test {
@@ -20,5 +19,4 @@ android_robolectric_test {
     ],
 
     instrumentation_for: "DirectRenderingCluster",
-    strict_mode: false,
 }

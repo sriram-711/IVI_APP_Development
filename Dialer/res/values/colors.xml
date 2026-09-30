@@ -43,5 +43,6 @@
     <color name="secondary_icon_color_dark">#8ADADCE0</color>
     <color name="secondary_icon_color_light">#99FFFFFF</color>
     <color name="add_favorite_background_color">@color/car_grey_868</color>
-
+    <color name="dialer_custom_background">#FADA70</color>
+    <color name="dialer_gothic_gold">#D4AF37</color>
 </resources>

@@ -17,16 +17,5 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-aconfig_declarations {
-    name: "com_android_car_settings_flags",
-    package: "com.android.car.settings",
-    container: "system",
-    srcs: [
-        "*.aconfig",
-    ],
-}
-
-java_aconfig_library {
-    name: "com_android_car_settings_flags_lib",
-    aconfig_declarations: "com_android_car_settings_flags",
-}
+// aconfig module types are not supported in the targeted remote build environment.
+// The generated Flags implementation is provided directly in source instead.

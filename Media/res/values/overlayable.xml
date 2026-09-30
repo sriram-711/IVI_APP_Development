@@ -56,6 +56,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_search"/>
       <item type="drawable" name="ic_settings"/>
       <item type="drawable" name="media_app_title_background"/>
+      <item type="drawable" name="media_background"/>
+      <item type="drawable" name="segula"/>
       <item type="drawable" name="music_overflow_action_background"/>
       <item type="drawable" name="seekbar_foreground"/>
       <item type="drawable" name="seekbar_progress"/>

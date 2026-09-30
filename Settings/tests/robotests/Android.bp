@@ -34,7 +34,7 @@ android_robolectric_test {
 
     java_resource_dirs: ["config"],
 
-    instrumentation_for: "CarSettingsForTesting",
+    instrumentation_for: "CarSettingsAppForTesting",
 
     test_options: {
         timeout: 36000,

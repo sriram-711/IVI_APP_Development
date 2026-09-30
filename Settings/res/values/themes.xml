@@ -17,7 +17,7 @@
 
 <resources>
     <style name="CarSettingTheme" parent="@style/Theme.CarUi.NoToolbar">
-        <item name="android:windowBackground">@color/settings_background</item>
+        <item name="android:windowBackground">@drawable/settings_background</item>
         <item name="wifi_signal">@drawable/wifi_signal</item>
         <item name="wifiSignalColor">?android:attr/textColorPrimary</item>
         <item name="dividerColor">@*android:color/car_list_divider</item>
@@ -68,8 +68,8 @@
     </style>
 
     <style name="CarSettingsPreferenceTheme" parent="@style/CarUiPreferenceTheme">
-        <item name="preferenceFragmentCompatStyle">@style/CarSettingsPreferenceFragment</item>
-        <item name="preferenceFragmentStyle">@style/CarSettingsPreferenceFragment</item>
+        <item name="preferenceFragmentCompatStyle">@style/PreferenceFragment.CarUi</item>
+        <item name="preferenceFragmentStyle">@style/PreferenceFragment.CarUi</item>
     </style>
 
     <!-- Themes for Setup Wizard -->
